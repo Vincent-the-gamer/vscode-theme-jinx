@@ -51,8 +51,6 @@ Then, run `Enable Jinx Glowing`
 - `Ctrl + Shift + P` or `Command + Shift + P`
 - Input `enable jinx glowing`
 
-    ![enable](./.github/enable.png)
-
 And happy hacking~~~ ☆´∀｀☆
 
 # Preview
@@ -61,7 +59,7 @@ And happy hacking~~~ ☆´∀｀☆
 ![theme](./.github/theme.png)
 
 ## Glowing
-![glowing](./.github/glowing-preview.png)
+![glowing](./.github/glowing.png)
 
 # Publish
 ```shell
