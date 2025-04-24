@@ -77,7 +77,7 @@ export function activate(this: any, context: vscode.ExtensionContext) {
 		try {
 			const htmlContent = await fs.promises.readFile(htmlFilePath, "utf-8");
 			const m = htmlContent.match(
-				/<!-- !! NEONHEART-SESSION-ID ([0-9a-fA-F-]+) !! -->/
+				/<!-- !! JINX-SESSION-ID ([0-9a-fA-F-]+) !! -->/
 			);
 			if (!m) return null;
 			else return m[1];
@@ -138,11 +138,11 @@ export function activate(this: any, context: vscode.ExtensionContext) {
 
 		html = html.replace(
 			/(<\/html>)/,
-			`<!-- !! NEONHEART-SESSION-ID ${uuidSession} !! -->\n` +
-				"<!-- !! NEONHEART-START !! -->\n" +
+			`<!-- !! JINX-SESSION-ID ${uuidSession} !! -->\n` +
+				"<!-- !! JINX-START !! -->\n" +
 				indicatorJS +
 				injectHTML +
-				"<!-- !! NEONHEART-END !! -->\n</html>"
+				"<!-- !! JINX-END !! -->\n</html>"
 		);
 		try {
 			await fs.promises.writeFile(htmlFile, html, "utf-8");
@@ -154,10 +154,10 @@ export function activate(this: any, context: vscode.ExtensionContext) {
 	}
 	function clearExistingPatches(html: string) {
 		html = html.replace(
-			/<!-- !! NEONHEART-START !! -->[\s\S]*?<!-- !! NEONHEART-END !! -->\n*/,
+			/<!-- !! JINX-START !! -->[\s\S]*?<!-- !! JINX-END !! -->\n*/,
 			""
 		);
-		html = html.replace(/<!-- !! NEONHEART-SESSION-ID [\w-]+ !! -->\n*/g, "");
+		html = html.replace(/<!-- !! JINX-SESSION-ID [\w-]+ !! -->\n*/g, "");
 		return html;
 	}
 

@@ -2,12 +2,12 @@
 (function () {
 	function patch() {
 		const e1 = document.querySelector(".right-items");
-		const e2 = document.querySelector(".right-items .__NEONHEART_INDICATOR_CLS");
+		const e2 = document.querySelector(".right-items .__JINX_INDICATOR_CLS");
 		if (e1 && !e2) {
 			let e = document.createElement("div");
 			e.id = "vincent-the-gamer.jinx";
 			e.title = "Jinx";
-			e.className = "statusbar-item right __NEONHEART_INDICATOR_CLS";
+			e.className = "statusbar-item right __JINX_INDICATOR_CLS";
 			{
 				const a = document.createElement("a");
 				a.tabIndex = -1;

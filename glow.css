@@ -24,7 +24,7 @@
 /* tooltips */
 
 .monaco-editor .monaco-hover {
-  background-color: #262335;
+  background-color: #3b0262;
   display: block !important;
   padding: 20px;
   transition: opacity 1s !important;
@@ -42,7 +42,7 @@
   }
 
   50% {
-    box-shadow: 0 0 85px 0 rgba(255, 0, 220, 0.6);
+    box-shadow: 0 0 85px 0 rgba(0, 187, 255, 0.6);
   }
 
   100% {
@@ -75,13 +75,13 @@
 }
 
 .monaco-editor .selected-text {
-  background-color: #000000aa !important;
-  box-shadow: 0 0 35px 5px #ff008d55;
+  background-color: #4ef1e7aa !important;
+  box-shadow: 0 0 35px 5px #6a00ff55;
   color: #fff !important;
 }
 
 .monaco-editor .cursor {
-  box-shadow: 0 0 15px 2px #ff65e5;
+  box-shadow: 0 0 15px 2px #00e9fe;
   animation: cursor .5s infinite linear;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .monaco-editor .line-numbers.active-line-number {
-  color: turquoise;
+  color: rgb(0, 255, 242);
   text-shadow: 0 0 1px yellow !important;
 }
 
@@ -122,11 +122,11 @@
 
 @keyframes cursor {
   0% {
-    box-shadow: 0 0 5px 0 #ff65e5;
+    box-shadow: 0 0 5px 0 #00e9fe;
   }
 
   100% {
-    box-shadow: 0 0 35px 5px #ff65e5;
+    box-shadow: 0 0 35px 5px #00e9fe;
   }
 }
 
@@ -179,8 +179,8 @@
 
 .mtk3,
 .mtk6 {
-  color: cyan;
-  text-shadow: 0 0 20px cyan;
+  color: rgb(162, 243, 255);
+  text-shadow: 0 0 20px rgb(162, 243, 255);
 }
 
 .mtk3.mtki {
@@ -192,13 +192,14 @@
 .mtk5,
 .mtk11,
 .mtk14 {
-  color: #ff008b;
+  color: #ff4eff;
+  text-shadow: 0 0 5px #ff4eff;
 }
 
 .mtk8,
 .mtk9 {
-  color: rgb(239, 231, 231);
-  text-shadow: 0 0 2px #100c0f, 0 0 3px #ff8ec8a3, 0 0 5px #ff0084, 0 0 10px #ff0084, 0 0 15px #ff0084;
+  color: rgb(255, 197, 5);
+  text-shadow: 0 0 2px #100c0f, 0 0 3px #ffdf8ea3, 0 0 5px #ff9100, 0 0 10px #ff2f00, 0 0 15px #ff000d;
   font-style: italic;
 }
 
@@ -211,6 +212,34 @@
 .mtk10 {
   font-style: italic;
 }
+
+.mtk17 {
+  color: rgb(249, 97, 168);
+  text-shadow: 0 0 5px rgb(249, 97, 168);
+}
+
+.mtk19 {
+  color: rgb(56, 252, 210);
+  text-shadow: 0 0 5px rgb(56, 252, 210);
+}
+
+.mtk20 {
+  color: yellow;
+  text-shadow: 0 0 5px yellow;
+}
+
+.mtk23 {
+  background-image: linear-gradient(to right, rgb(208, 255, 0), rgb(134, 253, 223), rgb(113, 198, 255), rgb(219, 37, 255));
+	color: transparent;
+  background-clip: text;
+	-webkit-background-clip: text;
+}
+
+.mtk24 {
+  color: rgb(0, 255, 38);
+  text-shadow: 0 0 5px rgb(0, 255, 38);
+}
+
 
 .monaco-editor .margin,
 .monaco-editor-background,
@@ -227,7 +256,7 @@
 .editor .content,
 .monaco-editor {
   background-color: transparent !important;
-  background-image: linear-gradient(to bottom, #200933 75%, #3d0b43);
+  background-image: linear-gradient(to bottom, #001753 75%, #001e3a);
   background-size: auto 100vh;
   background-position: top;
   background-repeat: no-repeat;
@@ -273,7 +302,7 @@ canvas {
 
 /* Sweet sunset dots */
 .monaco-workbench .activitybar>.content .monaco-action-bar .badge .badge-content {
-  background: linear-gradient(to bottom, #fff951 25%, #fc28a8);
+  background: linear-gradient(to bottom, #fff951 25%, #c728fc);
 }
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit::after {
@@ -289,7 +318,7 @@ canvas {
 
 /* Active sidebar item */
 .monaco-workbench .activitybar>.content .monaco-action-bar .action-item.checked {
-  box-shadow: inset 0 -5px 25px #c70077ae;
+  box-shadow: inset 0 -5px 25px #7700c7ae;
   position: relative;
 }
 
@@ -300,7 +329,7 @@ canvas {
   top: 0px;
   left: 0px;
   width: 4px;
-  background: linear-gradient(to bottom, #fc28a8, #03edf9) !important;
+  background: linear-gradient(to bottom, #01058e, #03edf9) !important;
   opacity: 1;
 }
 
@@ -329,7 +358,7 @@ canvas {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(to right, #fc28a8, #0000ff) !important;
+  background: linear-gradient(to right, #8728fc, #0000ff) !important;
 }
 
 /* update lightbulb to be neon */
@@ -339,9 +368,9 @@ canvas {
 }
 
 .monaco-editor .cursor {
-  background: linear-gradient(to bottom, #8a2dc0, #fc28a8);
-  box-shadow: 0 0 5px #fc199a;
-  border-color: #8a2dc0;
+  background: linear-gradient(to bottom, #00e9fe, #5fffbc);
+  box-shadow: 0 0 5px #cc00ff;
+  border-color: #00e9fe;
   color: #241b2f;
 }
 
@@ -350,22 +379,22 @@ canvas {
 }
 
 .monaco-editor .line-numbers {
-  color: #8a2dc066;
-  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #8a2dc066, 0 0 2px #8a2dc066;
+  color: #2d85c090;
+  text-shadow: 0 0 2px #333a38, 0 0 35px #ffffff44, 0 0 10px #2d7ec066, 0 0 2px #2d7bc066;
 }
 
 .monaco-list .monaco-list-rows {
-  background: rgb(48, 0, 71) !important;
+  background: rgb(0, 17, 71) !important;
 }
 
 .monaco-list-row.focused,
 .monaco-list-row.selected {
-  background-color: #8a2dc033 !important;
+  background-color: #2d52c033 !important;
 }
 
 .explorer-folders-view span[title~="emphasized"],
 .monaco-icon-label[title~="emphasized"]::after {
-  color: #fc199a;
+  color: #e919fc;
 }
 
 .explorer-folders-view span[title~="problems"],
@@ -374,6 +403,22 @@ canvas {
 }
 
 .vs-dark .monaco-scrollable-element>.scrollbar>.slider {
-  background: rgb(153, 99, 255);
+  background: rgb(99, 130, 255);
   opacity: 0.5;
+}
+
+.monaco-highlighted-label, 
+.action-label, 
+.statusbar-item-label {
+  color: rgb(0, 222, 222);
+  text-shadow: 0 0 2px rgb(0, 222, 222);
+}
+
+/* Replace VSCode Logo */
+.editor-group-watermark > .letterpress {
+  background-image: url("https://raw.githubusercontent.com/Aikoyori/ProgrammingVTuberLogos/main/VSCode/VSCode.png") !important;
+  opacity: 0.75;
+  overflow: visible;
+  filter: none;
+  transform: scale(1.5, 1.5);
 }
