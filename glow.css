@@ -423,7 +423,7 @@ canvas {
   transform: scale(1.5, 1.5);
 }
 
-span.codicon {
+span.codicon-remote {
   color: black !important;
   text-shadow: none !important;
 }
