@@ -1,0 +1,94 @@
+{
+    "name": "jinx",
+    "displayName": "Jinx",
+    "description": "Yet another glowing VSCode theme.",
+    "version": "0.1.0",
+    "author": "Vincent-the-gamer",
+    "publisher": "Vincent-the-gamer",
+    "icon": "icon.png",
+    "homepage": "https://github.com/Vincent-the-gamer/vscode-theme-jinx#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vincent-the-gamer/vscode-theme-jinx"
+    },
+    "bugs": {
+        "url": "https://github.com/Vincent-the-gamer/vscode-theme-jinx/issues"
+    },
+    "engines": {
+        "vscode": "^1.94.0"
+    },
+    "keywords": [
+        "jinx",
+        "cyberpunk",
+        "vscode theme",
+        "theme"
+    ],
+    "categories": [
+        "Themes"
+    ],
+    "main": "./dist/index.js",
+    "contributes": {
+        "themes": [
+            {
+                "label": "Jinx",
+                "uiTheme": "vs-dark",
+                "path": "./themes/jinx-color-theme.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "jinx.installJinx",
+                "title": "Enable Jinx Glowing"
+            },
+            {
+                "command": "jinx.uninstallJinx",
+                "title": "Disable Jinx Glowing"
+            },
+            {
+                "command": "jinx.updateJinx",
+                "title": "Reload Jinx Glowing"
+            }
+        ],
+        "configuration": {
+            "title": "Jinx Glowing Configuration",
+            "properties": {
+                "jinx.imports": {
+                    "description": "CSS/JS files, as an array of URLs, not file paths",
+                    "type": "array",
+                    "default": []
+                },
+                "jinx.statusbar": {
+                    "description": "Enable Status Indicator",
+                    "type": "boolean",
+                    "default": true
+                },
+                "jinx.staging_dir": {
+                    "description": "Directory used for storing staged CSS/JS files. Must be inside VSCode's extension directory, otherwise VSCode will refuse to load the your custom CSS/JS.",
+                    "type": "string",
+                    "default": ""
+                }
+            }
+        }
+    },
+    "scripts": {
+        "login:vsce": "vsce login vincent-the-gamer",
+        "logout:vsce": "vsce logout vincent-the-gamer",
+        "pack": "vsce package",
+        "publish": "vsce publish",
+        "build": "tsup src/index.ts --external vscode",
+        "dep": "taze major"
+    },
+    "devDependencies": {
+        "@types/node": "^22.8.2",
+        "@types/vscode": "^1.94.0",
+        "@vscode/vsce": "^3.2.1",
+        "taze": "^0.17.2",
+        "tsup": "^8.3.5",
+        "typescript": "^5.6.3"
+    },
+    "dependencies": {
+        "file-url": "^4.0.0",
+        "node-fetch": "^2.7.0",
+        "uuid": "^11.0.2"
+    }
+}
