@@ -407,7 +407,6 @@ canvas {
   opacity: 0.5;
 }
 
-.monaco-highlighted-label, 
 .action-label, 
 .statusbar-item-label {
   color: rgb(0, 222, 222);
