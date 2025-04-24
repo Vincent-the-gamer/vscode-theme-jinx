@@ -422,3 +422,8 @@ canvas {
   filter: none;
   transform: scale(1.5, 1.5);
 }
+
+span.codicon {
+  color: black !important;
+  text-shadow: none !important;
+}
