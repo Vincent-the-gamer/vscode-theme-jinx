@@ -53,6 +53,39 @@ Then, run `Enable Jinx Glowing`
 
 And happy hacking~~~ ☆´∀｀☆
 
+# Add a background image
+
+Please use [Background](https://github.com/shalldie/vscode-background) extension.
+
+Download pic from the top of this document, then add these codes to `settings.json`.
+```json
+"background.fullscreen": {
+    "images": ["file:///path/to/pic"],
+    "opacity": 0.18,
+    "size": "cover",
+    "position": "center",
+    "interval": 0
+},
+"background.editor": {
+    "background-position": "100% 100%",
+    "background-size": "cover",
+    "opacity": 0.3
+},
+```
+
+Additionally, change your comment color.
+```json
+"editor.tokenColorCustomizations": {
+    "comments": {
+        "foreground": "#ffd9c4",
+        "fontStyle": "bold"
+    }
+},
+```
+
+Then your Code will look like my preview pic.
+
+
 # Preview
 
 ## Normal
