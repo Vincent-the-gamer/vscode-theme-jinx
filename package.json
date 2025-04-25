@@ -78,7 +78,7 @@
         "dep": "taze major"
     },
     "devDependencies": {
-        "@types/node": "^22.14.1",
+        "@types/node": "^22.15.2",
         "@types/vscode": "^1.99.1",
         "@vscode/vsce": "^3.3.2",
         "taze": "^19.0.4",
