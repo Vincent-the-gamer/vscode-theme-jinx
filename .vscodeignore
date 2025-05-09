@@ -3,3 +3,6 @@
 .gitignore
 vsc-extension-quickstart.md
 pnpm-lock.yaml
+.github
+.CHANGELOG.md
+env.d.test
