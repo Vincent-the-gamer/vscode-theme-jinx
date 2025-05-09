@@ -74,11 +74,11 @@
         "logout:vsce": "vsce logout vincent-the-gamer",
         "pack": "vsce package",
         "publish": "vsce publish",
-        "build": "tsup src/index.ts --external vscode",
+        "build": "tsup",
         "dep": "taze major"
     },
     "devDependencies": {
-        "@types/node": "^22.15.2",
+        "@types/node": "^22.15.17",
         "@types/vscode": "^1.99.1",
         "@vscode/vsce": "^3.3.2",
         "taze": "^19.0.4",

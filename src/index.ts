@@ -13,9 +13,9 @@ function isVSCodeBelowVersion(version: string) {
 	const vscodeVersion = vscode.version;
 	const vscodeVersionArray = vscodeVersion.split('.');
 	const versionArray = version.split('.');
-	
+
 	for (let i = 0; i < versionArray.length; i++) {
-		if (vscodeVersionArray[i] < versionArray[i]) {
+		if (Number(vscodeVersionArray[i]) < Number(versionArray[i])) {
 			return true;
 		}
 	}
