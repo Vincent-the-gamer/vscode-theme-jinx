@@ -53,6 +53,12 @@ Then, run `Enable Jinx Glowing`
 
 And happy hacking~~~ ☆´∀｀☆
 
+# Change font
+
+If you like the font I'm using, you can download it:
+
+Input Mono: https://input.djr.com/
+
 # Add a background image
 
 Please use [Background](https://github.com/shalldie/vscode-background) extension.
