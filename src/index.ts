@@ -29,10 +29,17 @@ export function activate(this: any, context: vscode.ExtensionContext) {
 		: globalThis._VSCODE_FILE_ROOT;
 	const isWin = /^win/.test(process.platform);
 	const base = appDir + (isWin ? "\\vs\\code" : "/vs/code");
-	const electronBase = isVSCodeBelowVersion("1.70.0") ? "electron-browser" : "electron-sandbox";
-	let htmlFile = path.join(base, "electron-sandbox", "workbench", "workbench.html");
+	let electronBase: string;
+	if(isVSCodeBelowVersion("1.70.0")) {
+		electronBase = "electron-browser"
+	} else if( isVSCodeBelowVersion("1.102.0")) {
+		electronBase = "electron-sandbox"
+	} else {
+		electronBase = "electron-browser"
+	}
+	let htmlFile = path.join(base, electronBase, "workbench", "workbench.html");
 	if (!fs.existsSync(htmlFile)) {
-		htmlFile = path.join(base, "electron-sandbox", "workbench", "workbench.esm.html");
+		htmlFile = path.join(base, electronBase, "workbench", "workbench.esm.html");
 	}
 	const BackupFilePath = (uuid: any) =>
 		path.join(base, electronBase, "workbench", `workbench.${uuid}.bak-jinx`);
