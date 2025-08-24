@@ -1,3 +1,326 @@
+/* _Durations */
+:root {
+  --active-duration:  300ms; 
+}
+
+:root {
+  --command-palette-duration:  300ms; 
+}
+
+:root {
+  --scrolling-duration:  300ms; 
+}
+
+:root {
+  --tabs-duration:  300ms; 
+}
+
+/* _Animate */
+.monaco-list-row:not(
+    .explorer-folders-view .monaco-list-row,
+    .outline-pane .monaco-list-row,
+    .monaco-editor .overflowingContentWidgets .monaco-list-row,
+    .action-widget .monaco-list-row,
+    .interactive-session .monaco-list-row
+  ) {
+  animation: scrollingAnimation var(--scrolling-duration);
+}
+
+.quick-input-widget .monaco-list-rows[style*="top: 0px;"] .monaco-list-row,
+.settings-tree-container
+  .monaco-list-rows[style*="top: 0px;"]
+  .monaco-list-row {
+  animation-duration: 0ms;
+}
+
+/* _SmoothTabs */
+.tabs-container > .tab.moveLeft {
+  transform-origin: left;
+  /* animation: tabMoveLeft var(--tabs-duration); */
+  z-index: 2;
+}
+
+.tabs-container > .tab.moveRight {
+  transform-origin: left;
+  animation: tabMoveRight var(--tabs-duration);
+  z-index: 2;
+}
+
+@keyframes tabMoveLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes tabMoveRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Active Indent */
+.monaco-list-row:not(.explorer-folders-view .monaco-list-row, .code-cell-row) {
+  transition: transform var(--active-duration);
+  &.focused {
+    transform: translateX(0.5rem);
+  }
+}
+
+/* Active Scale */
+.monaco-list-row:not(.explorer-folders-view .monaco-list-row, .code-cell-row) {
+  transition: scale var(--active-duration);
+  scale: 0.98;
+  &.focused {
+    scale: 1;
+  }
+}
+
+/* Command Palette Fade */
+.quick-input-widget {
+  transform-origin: top;
+  animation: openPopup var(--command-palette-duration);
+
+  &[style*="display: none;"] {
+    display: block !important;
+    transform-origin: top;
+    animation: closePopup var(--command-palette-duration);
+    opacity: 0;
+    transform: scaleY(0);
+    pointer-events: none;
+  }
+}
+
+@keyframes openPopup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes closePopup {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+}
+
+/* Command Palette Scale */
+.quick-input-widget {
+  transform-origin: top;
+  animation: openPopup var(--command-palette-duration);
+
+  &[style*="display: none;"] {
+    display: block !important;
+    transform-origin: top;
+    animation: closePopup var(--command-palette-duration);
+    opacity: 0;
+    transform: scaleY(0);
+    pointer-events: none;
+  }
+}
+
+@keyframes openPopup {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes closePopup {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+/* Command Palette Slide */
+.quick-input-widget {
+  transform-origin: top;
+  animation: openPopup var(--command-palette-duration);
+
+  &[style*="display: none;"] {
+    display: block !important;
+    transform-origin: top;
+    animation: closePopup var(--command-palette-duration);
+    opacity: 0;
+    transform: scaleY(0);
+    pointer-events: none;
+  }
+}
+
+@keyframes openPopup {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closePopup {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+
+/* Misc */
+:root {
+  --smooth-windows-duration: 300ms;
+}
+
+/* Selects when not resizing or previewing */
+.monaco-workbench:not(.monaco-workbench:has(.monaco-sash.active),
+  .monaco-workbench:has(iframe)) {
+
+  .monaco-workbench,
+  .split-view-view,
+  .editor-actions,
+  .minimap,
+  .content,
+  .monaco-breadcrumbs,
+  .overflow-guard,
+  .monaco-scrollable-element,
+  .panel,
+  .title {
+
+    /* Narrows down elements by finding inline styling of top, left, width, or height */
+    &[style*="top"],
+    &[style*="left"],
+    &[style*="width"],
+    &[style*="height"] {
+      transition-property: top, left, width, height;
+      transition-duration: var(--smooth-windows-duration);
+    }
+  }
+}
+
+/* Scrolling Fade */
+@keyframes scrollingAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrolling Scale */
+@keyframes scrollingAnimation {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrolling Slide */
+@keyframes scrollingAnimation {
+  from {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Tabs Flip */
+.tabs-container > .tab.newTab {
+  transform-origin: center;
+  animation: openTab var(--tabs-duration);
+}
+
+@keyframes openTab {
+  from {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* Tabs Scale */
+.tabs-container > .tab.newTab {
+  transform-origin: left;
+  animation: openTab var(--tabs-duration);
+}
+
+.tabs-container > .tab {
+  z-index: 2;
+}
+
+@keyframes openTab {
+  from {
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+  }
+  to {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Tabs Slide */
+.tabs-container > .tab.newTab {
+  transform-origin: left;
+  animation: openTab var(--tabs-duration);
+}
+
+.tabs-container > .tab {
+  z-index: 2;
+}
+
+@keyframes openTab {
+  from {
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Glows */
 /* hover flip specials */
 .mtk8,
 .mtk9,

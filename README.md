@@ -16,6 +16,21 @@
 
 Search `jinx` in VSCode extension menu.
 
+# Animation (v0.1.6)
+
+From `v0.1.6`, Jinx supports **animations** by default, and you can have `cursor trailing effect` by adding dist/trail.js to `jinx.imports`.
+
+```json
+"jinx.imports": [
+    "file://<UserFolder>/.vscode/extensions/vincent-the-gamer.jinx-{plugin-version}/glow.css",
+    "file://<UserFolder>/.vscode/extensions/vincent-the-gamer.jinx-{plugin-version}/dist/trail.js"
+],
+```
+
+<video width="400" height="300" controls>
+    <source src="./.github/animation.mp4" type="video/mp4">
+</video>
+
 # Enable Glowing Effect
 
 Provide your path to `glow.css` in `settings.json`.

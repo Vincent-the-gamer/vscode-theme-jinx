@@ -2,7 +2,7 @@
   "name": "jinx",
   "displayName": "Jinx",
   "description": "Yet another glowing VSCode theme.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Vincent-the-gamer",
   "publisher": "Vincent-the-gamer",
   "icon": "icon.png",
@@ -15,7 +15,7 @@
     "url": "https://github.com/Vincent-the-gamer/vscode-theme-jinx/issues"
   },
   "engines": {
-    "vscode": "^1.102.0"
+    "vscode": "^1.103.0"
   },
   "keywords": [
     "jinx",
@@ -74,16 +74,17 @@
     "logout:vsce": "vsce logout vincent-the-gamer",
     "pack": "vsce package",
     "publish": "vsce publish",
-    "build": "tsdown",
-    "dep": "taze major"
+    "build": "tsdown && pnpm run trail",
+    "dep": "taze major",
+    "trail": "cp src/trail.js dist/trail.js"
   },
   "devDependencies": {
-    "@types/node": "^22.16.3",
-    "@types/vscode": "^1.102.0",
+    "@types/node": "^22.17.2",
+    "@types/vscode": "^1.103.0",
     "@vscode/vsce": "3.3.2",
-    "taze": "^19.1.0",
-    "tsdown": "^0.12.9",
-    "typescript": "^5.8.3"
+    "taze": "^19.3.0",
+    "tsdown": "^0.14.1",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "file-url": "^4.0.0",
