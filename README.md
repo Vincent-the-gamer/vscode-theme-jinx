@@ -27,6 +27,14 @@ From `v0.1.6`, Jinx supports **animations** by default, and you can have `cursor
 ],
 ```
 
+To get better cursor effect, add these to `settings.json`
+
+```json
+"editor.cursorBlinking": "solid",
+"editor.cursorWidth": 3,
+"editor.cursorSmoothCaretAnimation": "on"
+```
+
 https://github.com/user-attachments/assets/4a780545-09c3-4ede-a4b1-e1a52308fce1
 
 
